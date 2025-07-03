@@ -1,10 +1,12 @@
+# Share Trading Analytics 
+
 I built this SQL share trading project to practice and strengthen my foundational database skills.
 Using a single transactions table, I worked through real business questions step by step: creating the schema, inserting sample data, making structural tweaks, and writing essential queries.
 
 This project is designed for anyone learning SQL—whether you’re just starting or reviewing the basics. The queries and scripts here are simple, clear, and meant to be practical examples for self-study or quick reference.
 
 
-📁 Project Structure
+## 📁 Project Structure
 
 - setup_scripts/  –  Table creation, insertion, and alterations
 - queries/        –  All SQL queries
