@@ -22,14 +22,14 @@ This project uses a single table called `share_transactions` with the following 
 | transaction_id    | SERIAL (PK)   | Unique identifier for each trade   |
 | trade_date        | DATE          | Date of transaction                |
 | stock_symbol      | VARCHAR(10)   | Stock/company symbol               |
-| quantity          | NUMERIC(10,2) | Number of shares traded            |
+| quantity          | INTEGER       | Number of shares traded            |
 | price_per_share   | NUMERIC(10,2) | Price per share at transaction     |
 | broker            | VARCHAR(100)  | Broker name                        |
-| remarks           | VARCHAR(50)   | Extra details or notes             |
+| remarks           | VARCHAR(200)  | Extra details or notes             |
 
 Below is the schema diagram for this table:
 
-![Table Schema](docs/share_transactions_schema.png)
+![Table Schema](docs/visual_schema_diagram.png)
 
 ## 📘 What I Tried Out
 
