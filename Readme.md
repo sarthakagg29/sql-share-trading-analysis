@@ -13,6 +13,24 @@ This project is designed for anyone learning SQL—whether you’re just startin
 - docs/           –  Screenshots and outputs
 - README.md       –  Project summary
 
+## 🗂 Table Schema
+
+This project uses a single table called `share_transactions` with the following columns:
+
+| Column Name       | Data Type      | Description                        |
+|-------------------|---------------|------------------------------------|
+| transaction_id    | SERIAL (PK)   | Unique identifier for each trade   |
+| trade_date        | DATE          | Date of transaction                |
+| stock_symbol      | VARCHAR(10)   | Stock/company symbol               |
+| quantity          | NUMERIC(10,2) | Number of shares traded            |
+| price_per_share   | NUMERIC(10,2) | Price per share at transaction     |
+| broker            | VARCHAR(100)  | Broker name                        |
+| remarks           | VARCHAR(50)   | Extra details or notes             |
+
+Below is the schema diagram for this table:
+
+![Table Schema](docs/share_transactions_schema.png)
+
 ## 📘 What I Tried Out
 
 - Built the table and set up all columns from scratch
