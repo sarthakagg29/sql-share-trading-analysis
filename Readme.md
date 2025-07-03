@@ -58,6 +58,59 @@ Below is the schema diagram for this table:
 2. Use the queries in `queries/` to analyze the data.
 3. Check the `docs/` folder for screenshots and reference outputs.
 
+## 🐞 Mistakes I Made (And What I Learned)
+
+During this project, I ran into a few classic beginner problems—and some surprises too! Here’s what tripped me up and how I figured things out:
+
+---
+
+### Decimal Shares (Quantity Column)
+
+**What happened:**  
+At first, I set the quantity column as `NUMERIC(10,2)`. It sounded logical, but then I realized—wait, you can’t actually buy half a share in real life!
+
+**How I fixed it:**  
+Changed the column type to `INTEGER` using `ALTER TABLE`. Easy fix, and made way more sense.
+
+---
+
+### Remarks Column Was Too Short
+
+**What happened:**  
+I kept running into trouble when trying to write longer notes—`VARCHAR(50)` just wasn’t enough!
+
+**How I fixed it:**  
+Increased it to `VARCHAR(200)`. Now I have plenty of space for remarks.
+
+---
+
+### Unique Constraint on Trade Date
+
+**What happened:**  
+Total rookie mistake: I accidentally made the `trade_date` column unique. Of course, you can have more than one trade on the same day. Got an error when inserting data.
+
+**How I fixed it:**  
+Dropped the unique constraint—now multiple trades on the same date work fine.
+
+*Screenshot of the error:*
+
+![Unique constraint error](docs/unique_constraint_trade_date_error.png)
+
+---
+
+### Transaction IDs Didn’t Start at 1
+
+**What happened:**  
+After deleting and re-adding rows, my `transaction_id` column (auto-increment) started from 8 instead of 1.
+
+**How I fixed it:**  
+Used `TRUNCATE TABLE ... RESTART IDENTITY` to reset everything so IDs start from 1 again.
+
+---
+
+Messing up and then figuring out the fixes actually helped me understand how databases work in the real world. Every mistake made things a bit clearer—and honestly, that’s the best way to learn!
+
+
 
 
 
